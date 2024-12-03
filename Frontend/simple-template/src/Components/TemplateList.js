@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const TemplateList = ({ templates, setTemplates, setEditingTemplateId }) => {
   const handleDelete = (id) => {
-    axios.delete(`https://simple-template-two.vercel.app/templates/${id}`)
+    axios.delete(`/templates/${id}`)
       .then(() => {
         setTemplates(templates.filter(template => template._id !== id));
       })
