@@ -11,7 +11,7 @@ app.use(express.json());
 dotenv.config();
 app.use(cors(
   {
-    origin: ["https://localhost:3000"],
+    origin: ["https://simple-template-apps.vercel.app"],
     methods: ["POST", "GET", "UPDATE", "DELETE"],
     credentials: true
   }
