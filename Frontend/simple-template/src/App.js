@@ -8,7 +8,7 @@ const App = () => {
   const [editingTemplateId, setEditingTemplateId] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/templates')
+    axios.get('https://simple-template-two.vercel.app/templates')
       .then(response => setTemplates(response.data))
       .catch(error => console.log(error));
   }, []);
