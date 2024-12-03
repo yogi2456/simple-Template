@@ -9,13 +9,12 @@ const app = express();
 
 app.use(express.json());
 dotenv.config();
-app.use(cors(
-  {
-    origin: ["https://simple-template-apps.vercel.app"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
-  }
-));
+app.use(cors(corsOptions));
+
+var corsOptions = {
+  origin: ["http://localhost:3000", "https://simple-template-apps.vercel.app"],
+  credentials: true,
+};
 
 // mongodb connection
 mongoose
