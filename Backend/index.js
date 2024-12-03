@@ -16,6 +16,11 @@ var corsOptions = {
   credentials: true,
 };
 
+
+app.get("/", (req, res) => {
+  res.send("hello")
+})
+
 // mongodb connection
 mongoose
   .connect(process.env.MONGODB_URL)
