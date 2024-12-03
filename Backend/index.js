@@ -12,7 +12,7 @@ dotenv.config();
 app.use(cors(
   {
     origin: ["https://simple-template-apps.vercel.app"],
-    methods: ["POST", "GET", "UPDATE", "DELETE"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
   }
 ));
