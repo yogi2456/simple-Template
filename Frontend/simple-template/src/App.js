@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TemplateList from './Components/TemplateList.js';
 import TemplateCard from './Components/TemplateCard.js';
+import api from './AxiosConfig/index.js';
 
 const App = () => {
   const [templates, setTemplates] = useState([]);
   const [editingTemplateId, setEditingTemplateId] = useState(null);
 
   useEffect(() => {
-    axios.get('/templates')
+    api.get('/templates')
       .then(response => setTemplates(response.data))
       .catch(error => console.log(error));
   }, []);

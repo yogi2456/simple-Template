@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import api from '../AxiosConfig';
 
 const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
   const [name, setName] = useState('');
@@ -7,7 +8,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
 
   useEffect(() => {
     if (templateId) {
-      axios.get(`/templates/${templateId}`)
+      api.get(`/templates/${templateId}`)
         .then(response => {
           setName(response.data.name);
           setContent(response.data.content);
@@ -22,7 +23,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
 
     if (templateId) {
       // Update existing template
-      axios.put(`/templates/${templateId}`, templateData)
+      api.put(`/templates/${templateId}`, templateData)
         .then(response => {
           setTemplates(prevTemplates => prevTemplates.map(t => t._id === templateId ? response.data : t));
           setEditingTemplateId(null);
@@ -30,7 +31,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
         .catch(error => console.log(error));
     } else {
       // Create new template
-      axios.post('/templates', templateData)
+      api.post('/templates', templateData)
         .then(response => {
           setTemplates(prevTemplates => [...prevTemplates, response.data]);
         })

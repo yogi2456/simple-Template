@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import api from '../AxiosConfig';
 
 const TemplateList = ({ templates, setTemplates, setEditingTemplateId }) => {
   const handleDelete = (id) => {
-    axios.delete(`/templates/${id}`)
+    api.delete(`/templates/${id}`)
       .then(() => {
         setTemplates(templates.filter(template => template._id !== id));
       })
