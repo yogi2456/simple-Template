@@ -12,7 +12,7 @@ dotenv.config();
 app.use(cors(corsOptions));
 
 var corsOptions = {
-  origin: ["http://localhost:3000","simple-template-apps-ngpz8emip-yogeshs-projects-4baeebc1.vercel.app"],
+  origin: ["http://localhost:3000","simple-template-apps.vercel.app"],
   credentials: true,
 };
 
