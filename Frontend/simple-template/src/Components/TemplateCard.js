@@ -25,7 +25,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
       // Update existing template
       axios.put(`simple-template-two.vercel.app/templates/${templateId}`, templateData)
         .then(response => {
-          setTemplates(prevTemplates => prevTemplates.map(t => t._id === templateId ? response.data : t));
+          setTemplates(prevTemplates => prevTemplates.map(temp => temp._id === templateId ? response.data : temp));
           setEditingTemplateId(null);
         })
         .catch(error => console.log(error));
