@@ -16,7 +16,7 @@ const TemplateList = ({ templates, setTemplates, setEditingTemplateId }) => {
       <h2 className='text-3xl text-white'>Templates Lists</h2>
       <ul>
         {templates.map(template => (
-          <li className='mt-5 max-w-full max-h-full bg-white rounded-xl py-2 px-5 flex justify-between' key={template._id}>
+          <li className='mt-5 max-w-80 m-auto max-h-full bg-white rounded-xl py-2 px-5 flex justify-between' key={template._id}>
            <div className='text-left'>
            <h3 className='text-xl'>{template.name}</h3>
            <p className='text-xs'>{template.content}</p>
