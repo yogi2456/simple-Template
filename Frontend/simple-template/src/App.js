@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TemplateList from './Components/TemplateList.js';
 import TemplateCard from './Components/TemplateCard.js';
-import api from './AxiosConfig/index.js';
+// import api from './AxiosConfig/index.js';
 
 const App = () => {
   const [templates, setTemplates] = useState([]);
   const [editingTemplateId, setEditingTemplateId] = useState(null);
 
   useEffect(() => {
-    api.get('/templates')
+    axios.get('simple-template-8x7pn89mk-yogeshs-projects-4baeebc1.vercel.app/templates')
       .then(response => setTemplates(response.data))
       .catch(error => console.log(error));
   }, []);

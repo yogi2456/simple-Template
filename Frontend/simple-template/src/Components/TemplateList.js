@@ -1,10 +1,10 @@
-import React from 'react';
 import axios from 'axios';
-import api from '../AxiosConfig';
+import React from 'react';
+// import api from '../AxiosConfig';
 
 const TemplateList = ({ templates, setTemplates, setEditingTemplateId }) => {
   const handleDelete = (id) => {
-    api.delete(`/templates/${id}`)
+    axios.delete(`simple-template-8x7pn89mk-yogeshs-projects-4baeebc1.vercel.app/templates/${id}`)
       .then(() => {
         setTemplates(templates.filter(template => template._id !== id));
       })
