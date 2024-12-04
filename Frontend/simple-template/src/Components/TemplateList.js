@@ -4,7 +4,7 @@ import React from 'react';
 
 const TemplateList = ({ templates, setTemplates, setEditingTemplateId }) => {
   const handleDelete = (id) => {
-    axios.delete(`simple-template-two.vercel.app/templates/${id}`)
+    axios.delete(`https://simple-template-backend.onrender.com/templates/${id}`)
       .then(() => {
         setTemplates(templates.filter(template => template._id !== id));
       })

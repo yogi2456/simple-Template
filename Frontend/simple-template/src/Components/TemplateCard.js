@@ -8,7 +8,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
 
   useEffect(() => {
     if (templateId) {
-      axios.get(`simple-template-two.vercel.app/templates/${templateId}`)
+      axios.get(`https://simple-template-backend.onrender.com/templates/${templateId}`)
         .then(response => {
           setName(response.data.name);
           setContent(response.data.content);
@@ -23,7 +23,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
 
     if (templateId) {
       // Update existing template
-      axios.put(`simple-template-two.vercel.app/templates/${templateId}`, templateData)
+      axios.put(`https://simple-template-backend.onrender.com/templates/${templateId}`, templateData)
         .then(response => {
           setTemplates(prevTemplates => prevTemplates.map(temp => temp._id === templateId ? response.data : temp));
           setEditingTemplateId(null);
@@ -31,7 +31,7 @@ const TemplateCard = ({ templateId, setTemplates, setEditingTemplateId }) => {
         .catch(error => console.log(error));
     } else {
       // Create new template
-      axios.post('simple-template-two.vercel.app/templates', templateData)
+      axios.post('https://simple-template-backend.onrender.com/templates', templateData)
         .then(response => {
           setTemplates(prevTemplates => [...prevTemplates, response.data]);
         })
