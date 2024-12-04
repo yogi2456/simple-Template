@@ -4,6 +4,7 @@ import TemplateList from './Components/TemplateList.js';
 import TemplateCard from './Components/TemplateCard.js';
 // import api from './AxiosConfig/index.js';
 import axios from 'axios';
+import "./App.css"
 
 const App = () => {
   const [templates, setTemplates] = useState([]);
@@ -16,9 +17,9 @@ const App = () => {
   }, []);
 
   return (
-    <div className='bg-teal-400 py-10 px-40 text-center max-h-full'>
+    <div className="bg-teal-500 px-40 py-10 text-center max-wh-full">
       <div className=''>
-      <h1 className='text-white font-medium text-3xl max-w-full text-center'>Template Manager</h1>
+      <h1 className='text-center text-white max-w-full text-2xl sm:text-black'>Template Manager</h1>
       <TemplateCard templateId={editingTemplateId} setTemplates={setTemplates} setEditingTemplateId={setEditingTemplateId} />
       <TemplateList templates={templates} setTemplates={setTemplates} setEditingTemplateId={setEditingTemplateId} />
       </div>
